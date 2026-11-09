@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FlowForge AI – Convert Ideas into Working Processes</title>
+<meta name="description" content="Describe any idea and FlowForge AI builds a step-by-step process, flowchart, tasks, resources and improvement tips." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/public/style.css" />
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+</head>
+<body>
+<header class="hero">
+  <div class="logo">⚙ FlowForge<span>AI</span></div>
+  <h1>Turn any idea into a <em>working process</em>.</h1>
+  <p>Describe what you want to do. Get steps, a flowchart, tasks, resources, missing steps and smart suggestions.</p>
+  <form id="form">
+    <textarea id="idea" rows="3" maxlength="2000" placeholder="I want to organize a college tech fest for 500 students."></textarea>
+    <div class="row">
+      <div class="chips">
+        <button type="button" class="chip">Launch a small online bakery</button>
+        <button type="button" class="chip">Onboard 10 new employees</button>
+        <button type="button" class="chip">Run a blood donation camp</button>
+      </div>
+      <button id="go" type="submit">Forge Process →</button>
+    </div>
+  </form>
+  <p id="error" class="error"></p>
+</header>
+
+<div id="loading" class="loading hidden"><div class="spinner"></div>Forging your process…</div>
+
+<main id="results" class="hidden">
+  <section class="card wide"><h2 id="title"></h2><p id="summary"></p></section>
+  <section class="card wide"><h3>Visual Workflow</h3><div id="chart" class="chart"></div></section>
+  <section class="card"><h3>Step-by-step Process</h3><ol id="steps" class="steps"></ol></section>
+  <section class="card"><h3>Task Breakdown</h3><table><thead><tr><th>Task</th><th>Owner</th><th>Priority</th></tr></thead><tbody id="tasks"></tbody></table></section>
+  <section class="card"><h3>Required Resources</h3><ul id="resources" class="list"></ul></section>
+  <section class="card warn"><h3>⚠ Missing-step Detection</h3><ul id="missing" class="list"></ul></section>
+  <section class="card wide tip"><h3>💡 Suggestions to Improve</h3><ul id="suggestions" class="list"></ul></section>
+</main>
+<footer>FlowForge AI · Powered by Google Gemini</footer>
+<script src="/public/app.js"></script>
+</body>
+</html>
